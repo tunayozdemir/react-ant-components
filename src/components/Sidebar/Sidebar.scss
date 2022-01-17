@@ -5,6 +5,9 @@
 
 .ant-layout {
   min-height: calc(100vh - 133px);
+  &-sider{
+    min-width: 300px !important;
+  }
 }
 
 .ant-layout-header,
