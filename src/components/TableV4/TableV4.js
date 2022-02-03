@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import 'antd/dist/antd.css';
-import './TableV4.css';
+import './TableV4.scss';
 import { Table, Button } from 'antd';
 
 const columns = [

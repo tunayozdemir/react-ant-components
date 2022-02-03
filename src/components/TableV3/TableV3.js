@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Table, Input, InputNumber, Form, Typography, Button } from 'antd';
-import './TableV3.css';
+import './TableV3.scss';
 import 'antd/dist/antd.css'
 
 const { Text } = Typography;
