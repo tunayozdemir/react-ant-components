@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation, Link } from 'react-router-dom'
 import PropTypes from "prop-types";
 import SideBar from "../Sidebar/SideBar"
 import Title from 'antd/lib/typography/Title'
@@ -8,7 +9,38 @@ import './Layout.scss'
 
 const { Header, Footer, Sider, Content } = Layout;
 const Layoute = (props) => {
+  const location = useLocation()
 
+  const breadCrumbView = () => {
+    const { pathname } = location;
+    const pathnames = pathname.split("/").filter((item) => item)
+    return (
+      <div>
+        <Breadcrumb>
+          {pathnames.length > 0 ? (
+            <Breadcrumb.Item>
+              <Link to="/">Table</Link>
+            </Breadcrumb.Item>
+          ) : (
+            <Breadcrumb.Item>Table</Breadcrumb.Item>
+          )}
+          {
+            pathnames.map((name, index) => {
+              const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`
+              const isLast = index === pathnames.length - 1
+              return isLast ? (
+                <Breadcrumb.Item>{name}</Breadcrumb.Item>
+              ) : (
+                <Breadcrumb.Item>
+                  <Link to={`${routeTo}`}>{name}</Link>
+                </Breadcrumb.Item>
+              )
+            })
+          }
+        </Breadcrumb>
+      </div>
+    )
+  }
 
   return (
     <Layout className='layout'>
@@ -22,10 +54,9 @@ const Layoute = (props) => {
         </Sider>
         <Content className='layout-content'>
           <Content className='layout-content__breadcrumb' style={{ padding: '0 50px' }}>
-            <Breadcrumb style={{ margin: '16px 0' }}>
-              <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
-              <Breadcrumb.Item>Home</Breadcrumb.Item>
-            </Breadcrumb>
+            <div style={{ margin: '16px 0' }}>
+              {breadCrumbView()}
+            </div>
             <div className='layout-content__children'>
               {props.children}
             </div>
