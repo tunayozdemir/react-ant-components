@@ -27,8 +27,8 @@ const Table3 = () => {
         const editable = isEditing(record);
         return editable ? (
           <span>
-            <a onClick={() => save(record.key)} style={{ marginRight: 8, }} >Save</a>
-            <a onClick={cancel} style={{ marginRight: 8, }} >Cancel</a>
+            <a href='#' onClick={() => save(record.key)} style={{ marginRight: 8, }} >Save</a>
+            <a href='#' onClick={cancel} style={{ marginRight: 8, }} >Cancel</a>
           </span>
         ) : (
           <Typography.Link disabled={editingKey !== ''} onClick={() => edit(record)}>Edit</Typography.Link>

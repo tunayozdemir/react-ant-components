@@ -3,7 +3,6 @@ import { Menu } from "antd";
 import Navigation from "./Navigation/Navigation"
 import './SideBar.scss'
 
-
 function SideBar() {
 
   return (

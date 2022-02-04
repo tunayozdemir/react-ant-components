@@ -1,0 +1,11 @@
+.layout {
+
+  &-header {
+    background-color: #7dbcea;
+  }
+  &-sider{
+    &__wrap{
+      width: 100% !important;
+    }
+  }
+}

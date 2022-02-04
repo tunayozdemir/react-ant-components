@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Routes from './components/config/routes'
-import Ast from './components/Layout'
-
+import Layouts from './components/Antd/Layout'
 
 function App() {
 
@@ -12,12 +11,10 @@ function App() {
   console.log("routeComponents :", routeComponents)
   return (
     <Router basename="/">
-      <Ast>
+      <Layouts>
         {routeComponents}
-      </Ast>
-
+      </Layouts>
     </Router>
   )
 }
-
 export default App;

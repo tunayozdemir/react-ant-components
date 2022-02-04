@@ -5,6 +5,8 @@ import TablePageV4 from '../../Pages/Tables/TablePageV4'
 import TablePageV5 from '../../Pages/Tables/TablePageV5'
 import TablePageV6 from '../../Pages/Tables/TablePageV6'
 
+import InputPageV1 from '../../Pages/Inputs/InputPageV1'
+
 const path = '';
 
 const routes = [
@@ -32,6 +34,10 @@ const routes = [
     path: `${path}/TablePageV6`,
     component: TablePageV6,
   },
+  {
+    path: `${path}/InputPageV1`,
+    component: InputPageV1,
+  }
 
 ];
 

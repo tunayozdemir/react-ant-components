@@ -1,6 +1,6 @@
-
 import React from 'react';
-import TableV6 from '../../components/TableV6/TableV6'
+import TableV6 from '../../components/Antd/Tables/TableV6'
+import './TablesPage.scss'
 
 function TablePageV6() {
   return (
