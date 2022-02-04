@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
-import 'antd/dist/antd.css';
-import './TableV4.scss';
-import { Table, Button } from 'antd';
+import React, { useState } from 'react'
+import { Table, Button, Row, Col } from 'antd';
+
+import './Tables.scss'
 
 const columns = [
   { title: 'Name', dataIndex: 'name' },
@@ -22,7 +22,7 @@ for (let i = 0; i < 5; i++) {
 function TableV4() {
 
   const [selectedRowKeys, setSelectedRowKeys] = useState([])
-  console.log("selectedRowKeys :",selectedRowKeys)
+  console.log("selectedRowKeys :", selectedRowKeys)
 
   const start = () => {
     setSelectedRowKeys([])
@@ -37,17 +37,19 @@ function TableV4() {
   };
 
   return (
-    <div>
-      <div>
+    <Row gutter={[24, 1]}>
+      <Col span={24}>
         <Button type="primary" onClick={start}>Cansel</Button>
-      </div>
-      <Table
-        rowSelection={rowSelection}
-        columns={columns}
-        dataSource={data}
-        onChange={(e)=>{console.log(e)}}
-      />
-    </div>
+      </Col>
+      <Col span={24}>
+        <Table
+          rowSelection={rowSelection}
+          columns={columns}
+          dataSource={data}
+          onChange={(e) => { console.log(e) }}
+        />
+      </Col>
+    </Row>
   )
 }
 

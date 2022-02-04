@@ -1,6 +1,8 @@
 import React from 'react'
 import { Form, Table, Tag, Checkbox } from 'antd';
 
+import './Tables.scss'
+
 function TableV5() {
   const [form] = Form.useForm();
 

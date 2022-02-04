@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Table, Tag } from 'antd';
-import 'antd/dist/antd.css'
+
+import 'antd/dist/antd.css';
+import './Tables.scss'
 
 const columns = [
   { title: 'Id', dataIndex: 'id' },

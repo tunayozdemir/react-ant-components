@@ -1,6 +1,7 @@
 import React from 'react';
-import 'antd/dist/antd.css';
 import { Table, Typography } from 'antd';
+
+import './Tables.scss'
 
 const { Text } = Typography;
 

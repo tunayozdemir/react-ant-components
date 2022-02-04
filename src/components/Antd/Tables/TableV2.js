@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Table, Tag, Button, Modal, Input } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import 'antd/dist/antd.css'
+
+import './Tables.scss'
 
 
 function TableV2() {

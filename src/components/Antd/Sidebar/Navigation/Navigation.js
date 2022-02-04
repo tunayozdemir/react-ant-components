@@ -15,7 +15,7 @@ const Navigation = () => {
     <Menu
       onClick={handleClick}
       defaultSelectedKeys={['1']}
-      // defaultOpenKeys={['sub1']}
+      defaultOpenKeys={['sub1']}
       mode="inline"
     >
       <Menu.ItemGroup key="g1" title="Componentler">
