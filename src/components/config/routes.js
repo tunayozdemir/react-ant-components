@@ -1,7 +1,7 @@
 import Dashboard from '../../Pages/Dashboard/Dashboard'
 import Buttons from '../../Pages/Buttons/Buttons'
 import Inputs from '../../Pages/Inputs/Inputs'
-
+import Cards from '../../Pages/Cards/Cards'
 
 import TablePageV1 from '../../Pages/Tables/TablePageV1'
 import TablePageV2 from '../../Pages/Tables/TablePageV2'
@@ -26,6 +26,10 @@ const routes = [
   {
     path: `${path}/Inputs`,
     component: Inputs,
+  },
+  {
+    path: `${path}/Cards`,
+    component: Cards,
   },
   {
     path: `${path}/TablePageV1`,

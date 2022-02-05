@@ -22,16 +22,17 @@ const Navigation = () => {
         <Menu.Item key="1"><Link to="/">Dashboard</Link></Menu.Item>
         <Menu.Item key="2"><Link to="/Buttons">Buttons</Link></Menu.Item>
         <Menu.Item key="3"><Link to="/Inputs">Inputs</Link></Menu.Item>
+        <Menu.Item key="4"><Link to="/Cards">Cards</Link></Menu.Item>
       </Menu.ItemGroup>
 
       <SubMenu key="sub1" title="Tablolar">
         <Menu.ItemGroup key="g2" title="Versionlar">
-          <Menu.Item key="4"><Link to="/TablePageV1">Table V1</Link></Menu.Item>
-          <Menu.Item key="5"><Link to="/TablePageV2">Table V2</Link></Menu.Item>
-          <Menu.Item key="6"><Link to="/TablePageV3">Table V3</Link></Menu.Item>
-          <Menu.Item key="7"><Link to="/TablePageV4">Table V4</Link></Menu.Item>
-          <Menu.Item key="8"><Link to="/TablePageV5">Table V5</Link></Menu.Item>
-          <Menu.Item key="9"><Link to="/TablePageV6">Table V6</Link></Menu.Item>
+          <Menu.Item key="14"><Link to="/TablePageV1">Table V1</Link></Menu.Item>
+          <Menu.Item key="15"><Link to="/TablePageV2">Table V2</Link></Menu.Item>
+          <Menu.Item key="16"><Link to="/TablePageV3">Table V3</Link></Menu.Item>
+          <Menu.Item key="17"><Link to="/TablePageV4">Table V4</Link></Menu.Item>
+          <Menu.Item key="18"><Link to="/TablePageV5">Table V5</Link></Menu.Item>
+          <Menu.Item key="19"><Link to="/TablePageV6">Table V6</Link></Menu.Item>
         </Menu.ItemGroup>
       </SubMenu>
 
