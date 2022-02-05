@@ -1,11 +1,30 @@
 .layout {
-
   &-header {
     background-color: #7dbcea;
+    height: 80px;
+    .ant-typography {
+      color: black !important;
+      margin:0;
+    }
+
+    &__left-side{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &-logo{
+        margin-right: 14px;
+      }
+    }
+
   }
-  &-sider{
-    &__wrap{
+  &-sider {
+    &__wrap {
       width: 100% !important;
+    }
+  }
+  &-content {
+    &__children {
+      color: black;
     }
   }
 }
