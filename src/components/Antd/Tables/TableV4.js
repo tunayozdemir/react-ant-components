@@ -37,19 +37,22 @@ function TableV4() {
   };
 
   return (
-    <Row gutter={[24, 1]}>
-      <Col span={24}>
-        <Button type="primary" onClick={start}>Cansel</Button>
-      </Col>
-      <Col span={24}>
-        <Table
-          rowSelection={rowSelection}
-          columns={columns}
-          dataSource={data}
-          onChange={(e) => { console.log(e) }}
-        />
-      </Col>
-    </Row>
+    <div className="container">
+      <Row gutter={[24, 1]}>
+        <Col span={12}>
+          <Table
+            rowSelection={rowSelection}
+            columns={columns}
+            dataSource={data}
+            onChange={(e) => { console.log(e) }}
+          />
+        </Col>
+        <Col span={24}>
+          <Button type="primary" onClick={start}>Cansel</Button>
+        </Col>
+      </Row>
+    </div>
+
   )
 }
 

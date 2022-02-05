@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Table, Input, InputNumber, Form, Typography, Button } from 'antd';
+import { Table, Input, InputNumber, Form, Typography, Button, Row, Col } from 'antd';
 
 import './Tables.scss'
 
@@ -7,7 +7,7 @@ const { Text } = Typography;
 
 const originData = [];
 
-for (let i = 0; i < 1; i++) { originData.push({ key: i.toString(), name: `Tunay ${i}`, percent: `57` });}
+for (let i = 0; i < 1; i++) { originData.push({ key: i.toString(), name: `Tunay ${i}`, percent: `57` }); }
 
 const Table3 = () => {
   const [form] = Form.useForm();
@@ -89,14 +89,15 @@ const Table3 = () => {
       const row = await form.validateFields();
       const newData = [...data];
       const index = newData.findIndex((item) => key === item.key);
-      
+
 
       if (index > -1) {
         const item = newData[index];
-        newData.splice(index, 1, { ...item, 
-        
-          name:row.name,
-          percent:`${row.percent}`.replace(/\B(?=(\d{2})+(?!\d))/g, ',')
+        newData.splice(index, 1, {
+          ...item,
+
+          name: row.name,
+          percent: `${row.percent}`.replace(/\B(?=(\d{2})+(?!\d))/g, ',')
 
         });
         setData(newData);
@@ -126,37 +127,45 @@ const Table3 = () => {
   });
 
   return (
-    <Form form={form} component={false}>
-      <Table components={{ body: { cell: EditableCell, }, }}
-        bordered
-        dataSource={data}
-        columns={mergedColumns}
-        rowClassName="editable-row"
-        summary={() => {
-          let totalRepayment = 0;
-  
-          data.forEach(({ percent }) => {
-            totalRepayment += percent;
-          });
-  
-          return (
-            <>
-              <Table.Summary.Row>
-                <Table.Summary.Cell>Total</Table.Summary.Cell>
-                <Table.Summary.Cell>
-                  <Text type="dark">{totalRepayment}</Text>
-                </Table.Summary.Cell>
-                <Table.Summary.Cell>
-                  
-                </Table.Summary.Cell>
-              </Table.Summary.Row>
-            </>
-          );
-        }}
-        
-      />
-      <Button onClick={addPerson}>Ekle</Button>
-    </Form>
+    <div className="container">
+      <Form form={form} component={false}>
+        <Row className="gutter-row" gutter={[24, 1]}>
+          <Col span={12}>
+            <Table components={{ body: { cell: EditableCell, }, }}
+              bordered
+              dataSource={data}
+              columns={mergedColumns}
+              rowClassName="editable-row"
+              summary={() => {
+                let totalRepayment = 0;
+
+                data.forEach(({ percent }) => {
+                  totalRepayment += percent;
+                });
+
+                return (
+                  <>
+                    <Table.Summary.Row>
+                      <Table.Summary.Cell>Total</Table.Summary.Cell>
+                      <Table.Summary.Cell>
+                        <Text type="dark">{totalRepayment}</Text>
+                      </Table.Summary.Cell>
+                      <Table.Summary.Cell>
+
+                      </Table.Summary.Cell>
+                    </Table.Summary.Row>
+                  </>
+                );
+              }}
+            />
+          </Col>
+          <Col span={24}>
+            <Button onClick={addPerson}>Ekle</Button>
+          </Col>
+        </Row>
+      </Form>
+    </div>
+
   );
 };
 export default Table3;

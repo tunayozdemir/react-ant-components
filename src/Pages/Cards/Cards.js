@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import AntdCard from '../../components/Antd/Cards/V1/CardV1'
+import { CardV1 } from '../../components/Antd'
 
 import './Cards.scss'
 
 const cardData = [
-  { id: '0', item: <AntdCard /> },
-  { id: '1', item: <AntdCard /> },
-  { id: '2', item: <AntdCard /> },
-  { id: '4', item: <AntdCard /> },
-  { id: '5', item: <AntdCard /> },
-  { id: '6', item: <AntdCard /> },
-  { id: '7', item: <AntdCard /> },
-  { id: '8', item: <AntdCard /> }
+  { id: '0', item: <CardV1 /> },
+  { id: '1', item: <CardV1 /> },
+  { id: '2', item: <CardV1 /> },
+  { id: '4', item: <CardV1 /> },
+  { id: '5', item: <CardV1 /> },
+  { id: '6', item: <CardV1 /> },
+  { id: '7', item: <CardV1 /> },
+  { id: '8', item: <CardV1 /> }
 
 ]
 
@@ -22,18 +22,15 @@ function Cards() {
 
   function handleOnDragEnd(result) {
     if (!result.destination) return;
-
     const items = Array.from(characters);
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
-
     updateCharacters(items);
   }
 
-
-
   return (
     <div className='cards-container'>
+      
       <h4>Yatay</h4>
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="characters" >
@@ -55,7 +52,9 @@ function Cards() {
           )}
         </Droppable>
       </DragDropContext>
+
       <hr />
+
       <h4>Dikey</h4>
       <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="characters" >

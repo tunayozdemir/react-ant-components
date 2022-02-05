@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Table, Tag, Checkbox } from 'antd';
+import { Form, Table, Tag, Checkbox, Row, Col } from 'antd';
 
 import './Tables.scss'
 
@@ -11,7 +11,7 @@ function TableV5() {
     { title: 'Age', dataIndex: 'age', key: 'age', },
     {
       title: 'Tags', key: 'tags', dataIndex: 'tags',
-      render: (tags )=> (
+      render: (tags) => (
         <>
           {tags.map(tag => {
             return (
@@ -34,9 +34,15 @@ function TableV5() {
   ];
 
   return (
-    <div>
+    <div className="container">
+
       <Form form={form}>
-        <Table columns={columns} dataSource={data} />
+        <Row gutter={[24]}>
+          <Col span={16}>
+            <Table columns={columns} dataSource={data} />
+          </Col>
+        </Row>
+
       </Form>
     </div>
   )

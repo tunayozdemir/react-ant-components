@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Buttons() {
+function ButtonV1() {
   return (
     <div>
-      Buttons...
+      ButtonV1...
     </div>
   )
 }
 
-export default Buttons;
+export default ButtonV1;

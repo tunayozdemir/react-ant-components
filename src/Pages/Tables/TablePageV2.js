@@ -1,5 +1,5 @@
 import React from 'react';
-import TableV2 from '../../components/Antd/Tables/TableV2'
+import { TableV2 } from '../../components/Antd'
 import './TablesPage.scss'
 
 function TablePageV2() {

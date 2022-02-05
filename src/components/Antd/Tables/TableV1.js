@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Table, Tag } from 'antd';
+import { Table, Tag, Row, Col } from 'antd';
 
 import 'antd/dist/antd.css';
 import './Tables.scss'
@@ -32,53 +32,58 @@ function TableV1() {
 
   return (
     <div className="container">
-      <Table
-        columns={columns}
-        dataSource={dataSource}
-        rowSelection={{
-          type: 'checkbox',
-          selectedRowKeys: defaultSelectRow,
-          onChange: (keys) => { setDefaultSelectRow(keys) },
-          onSelect: (reacor) => { console.log({ reacor }) },
-          getCheckboxProps: (record) => ({ disabled: record.Age === '33' }),
-          hideSelectAll: false,
-          selections: [
-            Table.SELECTION_NONE,{
-              key:'key',
-              text:'Tümünü Kaldır',
-            },
-            Table.SELECTION_ALL,{
-              key:'key',
-              text:'Tümünü Seç',
-            },
-            Table.SELECTION_INVERT,
-            {
-              key: 'even',
-              text: 'Çift Satırları Seç',
-              onSelect: (allKeys) => {
-                const selectedKeys = allKeys.filter(key => {
-                  return key % 2 === 0
-                })
-                setDefaultSelectRow(selectedKeys)
-              },
-            },
-            {
-              key: 'excellent',
-              text: 'Notu 50 Olanları seç',
-              onSelect: (allKeys) => {
-                const selectedKeys = allKeys.filter(key => {
-                  const isExcellent = dataSource.find(student => {
-                    return student.key === key && student.not.includes('50')
-                  })
-                  return isExcellent;
-                })
-                setDefaultSelectRow(selectedKeys)
-              },
-            },
-          ],
-        }}
-      >
-      </Table>
+      <Row className="gutter-row" gutter={[24, 1]}>
+        <Col span={24}>
+          <Table
+            columns={columns}
+            dataSource={dataSource}
+            rowSelection={{
+              type: 'checkbox',
+              selectedRowKeys: defaultSelectRow,
+              onChange: (keys) => { setDefaultSelectRow(keys) },
+              onSelect: (reacor) => { console.log({ reacor }) },
+              getCheckboxProps: (record) => ({ disabled: record.Age === '33' }),
+              hideSelectAll: false,
+              selections: [
+                Table.SELECTION_NONE, {
+                  key: 'key',
+                  text: 'Tümünü Kaldır',
+                },
+                Table.SELECTION_ALL, {
+                  key: 'key',
+                  text: 'Tümünü Seç',
+                },
+                Table.SELECTION_INVERT,
+                {
+                  key: 'even',
+                  text: 'Çift Satırları Seç',
+                  onSelect: (allKeys) => {
+                    const selectedKeys = allKeys.filter(key => {
+                      return key % 2 === 0
+                    })
+                    setDefaultSelectRow(selectedKeys)
+                  },
+                },
+                {
+                  key: 'excellent',
+                  text: 'Notu 50 Olanları seç',
+                  onSelect: (allKeys) => {
+                    const selectedKeys = allKeys.filter(key => {
+                      const isExcellent = dataSource.find(student => {
+                        return student.key === key && student.not.includes('50')
+                      })
+                      return isExcellent;
+                    })
+                    setDefaultSelectRow(selectedKeys)
+                  },
+                },
+              ],
+            }}
+          >
+          </Table>
+        </Col>
+      </Row>
+
     </div>
   )
 }

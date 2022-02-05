@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Table, Tag, Button, Modal, Input } from 'antd';
+import { Table, Tag, Button, Modal, Input, Row, Col } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 
 import './Tables.scss'
@@ -83,45 +83,51 @@ function TableV2() {
 
   return (
     <div className="container">
-      <Button onClick={addPerson}>Yeni Kişi Ekle</Button>
-      <Table columns={columns} dataSource={dataSource} ></Table>
-      <Modal
-        title="Personel Düzneleme"
-        visible={isModal}
-        okText="Tamam"
-        cancelText="Vazgeç"
-        onCancel={() => { resetEdit() }}
-        onOk={() => {
-          setDataSource(pre => {
-            return pre.map(person => {
-              if (person.id === isEditPerson.id) {
-                return isEditPerson
-              }
-              else {
-                return person
-              }
-            })
-          })
-          resetEdit()
-        }}
-      >
-        <Input value={isEditPerson?.firstName}
-          onChange={(e) => { setIsEditPerson(pre => { return { ...pre, firstName: e.target.value } }) }}
-        />
+      <Row gutter={[24, 1]}>
+        <Col span={24}>
+          <Table columns={columns} dataSource={dataSource} ></Table>
+          <Modal
+            title="Personel Düzneleme"
+            visible={isModal}
+            okText="Tamam"
+            cancelText="Vazgeç"
+            onCancel={() => { resetEdit() }}
+            onOk={() => {
+              setDataSource(pre => {
+                return pre.map(person => {
+                  if (person.id === isEditPerson.id) {
+                    return isEditPerson
+                  }
+                  else {
+                    return person
+                  }
+                })
+              })
+              resetEdit()
+            }}
+          >
+            <Input value={isEditPerson?.firstName}
+              onChange={(e) => { setIsEditPerson(pre => { return { ...pre, firstName: e.target.value } }) }}
+            />
 
-        <Input value={isEditPerson?.lastName}
-          onChange={(e) => { setIsEditPerson(pre => { return { ...pre, lastName: e.target.value } }) }}
-        />
+            <Input value={isEditPerson?.lastName}
+              onChange={(e) => { setIsEditPerson(pre => { return { ...pre, lastName: e.target.value } }) }}
+            />
 
-        <Input value={isEditPerson?.not}
-          onChange={(e) => { setIsEditPerson(pre => { return { ...pre, not: e.target.value } }) }}
-        />
+            <Input value={isEditPerson?.not}
+              onChange={(e) => { setIsEditPerson(pre => { return { ...pre, not: e.target.value } }) }}
+            />
 
-        <Input value={isEditPerson?.age}
-          onChange={(e) => { setIsEditPerson(pre => { return { ...pre, age: e.target.value } }) }}
-        />
-      </Modal>
-      <Modal></Modal>
+            <Input value={isEditPerson?.age}
+              onChange={(e) => { setIsEditPerson(pre => { return { ...pre, age: e.target.value } }) }}
+            />
+          </Modal>
+          <Modal></Modal>
+        </Col>
+        <Col span={24}>
+          <Button onClick={addPerson}>Yeni Kişi Ekle</Button>
+        </Col>
+      </Row>
     </div>
   )
 }

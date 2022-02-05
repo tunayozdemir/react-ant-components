@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Typography } from 'antd';
+import { Table, Typography, Row, Col } from 'antd';
 
 import './Tables.scss'
 
@@ -20,37 +20,42 @@ const data = [
 
 function TableV6() {
   return (
-    <>
-      <Table
-        columns={columns}
-        dataSource={data}
-        pagination={false}
-        bordered
-        summary={(pageData) => {
-          let totalBorrow = 0;
-          let totalRepayment = 0;
+    <div className="container">
+      <Row gutter={[24]}>
+        <Col span={16}>
+          <Table
+            columns={columns}
+            dataSource={data}
+            pagination={false}
+            bordered
+            summary={(pageData) => {
+              let totalBorrow = 0;
+              let totalRepayment = 0;
 
-          pageData.forEach(({ borrow, repayment }) => {
-            totalBorrow += borrow;
-            totalRepayment += repayment;
-          });
+              pageData.forEach(({ borrow, repayment }) => {
+                totalBorrow += borrow;
+                totalRepayment += repayment;
+              });
 
-          return (
-            <>
-              <Table.Summary.Row>
-                <Table.Summary.Cell>Total</Table.Summary.Cell>
-                <Table.Summary.Cell>
-                  <Text type="danger">{totalBorrow}</Text>
-                </Table.Summary.Cell>
-                <Table.Summary.Cell>
-                  <Text>{totalRepayment}</Text>
-                </Table.Summary.Cell>
-              </Table.Summary.Row>
-            </>
-          );
-        }}
-      />
-    </>
+              return (
+                <>
+                  <Table.Summary.Row>
+                    <Table.Summary.Cell>Total</Table.Summary.Cell>
+                    <Table.Summary.Cell>
+                      <Text type="danger">{totalBorrow}</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell>
+                      <Text>{totalRepayment}</Text>
+                    </Table.Summary.Cell>
+                  </Table.Summary.Row>
+                </>
+              );
+            }}
+          />
+        </Col>
+      </Row>
+
+    </div>
   )
 }
 export default TableV6;

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import InputV1 from '../../components/Antd/Inputs/V1/InputV1'
+import { InputV1 } from '../../components/Antd'
 import { Form, Row, Col, Button } from "antd";
 
 function Inputs() {

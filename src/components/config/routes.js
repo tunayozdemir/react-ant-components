@@ -2,6 +2,7 @@ import Dashboard from '../../Pages/Dashboard/Dashboard'
 import Buttons from '../../Pages/Buttons/Buttons'
 import Inputs from '../../Pages/Inputs/Inputs'
 import Cards from '../../Pages/Cards/Cards'
+import RadioButtons from '../../Pages/RadioButtons/RadioButtons'
 
 import TablePageV1 from '../../Pages/Tables/TablePageV1'
 import TablePageV2 from '../../Pages/Tables/TablePageV2'
@@ -9,6 +10,7 @@ import TablePageV3 from '../../Pages/Tables/TablePageV3'
 import TablePageV4 from '../../Pages/Tables/TablePageV4'
 import TablePageV5 from '../../Pages/Tables/TablePageV5'
 import TablePageV6 from '../../Pages/Tables/TablePageV6'
+import TablePageV7_Dnd from '../../Pages/Tables/TablePageV7_Dnd'
 
 
 const path = '';
@@ -30,6 +32,10 @@ const routes = [
   {
     path: `${path}/Cards`,
     component: Cards,
+  },
+  {
+    path: `${path}/RadioButtons`,
+    component: RadioButtons,
   },
   {
     path: `${path}/TablePageV1`,
@@ -55,6 +61,11 @@ const routes = [
     path: `${path}/TablePageV6`,
     component: TablePageV6,
   },
+  {
+    path: `${path}/TablePageV7_Dnd`,
+    component: TablePageV7_Dnd,
+  },
+
 
 ];
 

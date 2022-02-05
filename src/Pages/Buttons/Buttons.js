@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonV1 from '../../components/Antd/Buttons/Buttons'
+import {ButtonV1} from '../../components/Antd/'
 
 function Buttons() {
   return (
