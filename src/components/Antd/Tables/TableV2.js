@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Tag, Button, Modal, Input, Row, Col } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 
@@ -8,6 +8,7 @@ import './Tables.scss'
 function TableV2() {
   const [isModal, setIsModal] = useState(false);
   const [isEditPerson, setIsEditPerson] = useState(null)
+  const [loading, setLoading] = useState(true)
   const [dataSource, setDataSource] = useState([
     { key: '0', id: 0, firstName: 'Tunay', lastName: 'Özdemir', not: "50", age: '33' },
     { key: '1', id: 1, firstName: 'Hayriye', lastName: 'Özdemir', not: "92", age: '28' },
@@ -81,11 +82,17 @@ function TableV2() {
     setIsEditPerson(null)
   }
 
+  useEffect(() => { 
+    setTimeout(() => {
+      setLoading(false)
+    }, 1050);
+  }, [])
+
   return (
     <div className="container">
       <Row gutter={[24, 1]}>
         <Col span={24}>
-          <Table columns={columns} dataSource={dataSource} ></Table>
+          <Table loading={loading} columns={columns} dataSource={dataSource} ></Table>
           <Modal
             title="Personel Düzneleme"
             visible={isModal}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Table, Tag, Row, Col } from 'antd';
 
 import 'antd/dist/antd.css';
@@ -29,12 +29,20 @@ const dataSource = [
 
 function TableV1() {
   const [defaultSelectRow, setDefaultSelectRow] = useState(['2'])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => { 
+    setTimeout(() => {
+      setLoading(false)
+    }, 900);
+  }, [])
 
   return (
     <div className="container">
       <Row className="gutter-row" gutter={[24, 1]}>
         <Col span={24}>
           <Table
+            loading={loading}
             columns={columns}
             dataSource={dataSource}
             rowSelection={{

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Table, Button, Row, Col } from 'antd';
 
 import './Tables.scss'
@@ -20,8 +20,8 @@ for (let i = 0; i < 5; i++) {
 }
 
 function TableV4() {
-
   const [selectedRowKeys, setSelectedRowKeys] = useState([])
+  const [loading, setLoading] = useState(true)
   console.log("selectedRowKeys :", selectedRowKeys)
 
   const start = () => {
@@ -36,11 +36,18 @@ function TableV4() {
     onChange: onSelectChange,
   };
 
+  useEffect(() => { 
+    setTimeout(() => {
+      setLoading(false)
+    }, 850);
+  }, [])
+
   return (
     <div className="container">
       <Row gutter={[24, 1]}>
         <Col span={12}>
           <Table
+          loading={loading}
             rowSelection={rowSelection}
             columns={columns}
             dataSource={data}

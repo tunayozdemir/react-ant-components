@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Input, InputNumber, Form, Typography, Button, Row, Col } from 'antd';
 
 import './Tables.scss'
@@ -13,6 +13,7 @@ const Table3 = () => {
   const [form] = Form.useForm();
   const [data, setData] = useState(originData);
   const [editingKey, setEditingKey] = useState('');
+  const [loading, setLoading] = useState(true)
   const isEditing = (record) => record.key === editingKey;
 
 
@@ -126,12 +127,19 @@ const Table3 = () => {
     };
   });
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 800);
+  }, [])
+
   return (
     <div className="container">
       <Form form={form} component={false}>
         <Row className="gutter-row" gutter={[24, 1]}>
           <Col span={12}>
             <Table components={{ body: { cell: EditableCell, }, }}
+              loading={loading}
               bordered
               dataSource={data}
               columns={mergedColumns}

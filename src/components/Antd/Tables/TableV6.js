@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import { Table, Typography, Row, Col } from 'antd';
 
 import './Tables.scss'
@@ -19,11 +19,20 @@ const data = [
 ];
 
 function TableV6() {
+
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => { 
+    setTimeout(() => {
+      setLoading(false)
+    }, 952);
+  }, [])
   return (
     <div className="container">
       <Row gutter={[24]}>
         <Col span={16}>
           <Table
+          loading={loading}
             columns={columns}
             dataSource={data}
             pagination={false}

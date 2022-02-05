@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Form, Table, Tag, Checkbox, Row, Col } from 'antd';
 
 import './Tables.scss'
 
 function TableV5() {
   const [form] = Form.useForm();
+  const [loading, setLoading] = useState(true)
 
   const columns = [
     { title: 'Name', dataIndex: 'name', key: 'name', },
@@ -33,13 +34,19 @@ function TableV5() {
     { key: '3', name: 'Joe Black', age: 32, address: 'Sidney No. 1 Lake Park', tags: ['developer'], },
   ];
 
+  useEffect(() => { 
+    setTimeout(() => {
+      setLoading(false)
+    }, 1151);
+  }, [])
+
   return (
     <div className="container">
 
       <Form form={form}>
         <Row gutter={[24]}>
           <Col span={16}>
-            <Table columns={columns} dataSource={data} />
+            <Table loading={loading} columns={columns} dataSource={data} />
           </Col>
         </Row>
 
