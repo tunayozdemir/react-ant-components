@@ -7,7 +7,7 @@ const { Text } = Typography;
 
 const originData = [];
 
-for (let i = 0; i < 1; i++) { originData.push({ key: i.toString(), name: `Tunay ${i}`, percent: `57` }); }
+for (let i = 0; i < 1; i++) { originData.push({ key: i.toString(), name: `Tunay ${i}`, percent: `57,99` }); }
 
 const Table3 = () => {
   const [form] = Form.useForm();
@@ -21,9 +21,7 @@ const Table3 = () => {
     { title: 'Hissedar Adı Soyadı', dataIndex: 'name', width: '40%', editable: true, },
     { title: 'Her Hissedarın Hisse Yüzdesi', dataIndex: 'percent', width: '40%', editable: true, },
     {
-      title: '',
-      dataIndex: '',
-      width: '10%',
+      title: '', dataIndex: '', width: '10%',
       render: (_, record) => {
         const editable = isEditing(record);
         return editable ? (
@@ -145,7 +143,7 @@ const Table3 = () => {
               columns={mergedColumns}
               rowClassName="editable-row"
               summary={() => {
-                let totalRepayment = 0;
+                let totalRepayment = "";
 
                 data.forEach(({ percent }) => {
                   totalRepayment += percent;
@@ -159,7 +157,6 @@ const Table3 = () => {
                         <Text type="dark">{totalRepayment}</Text>
                       </Table.Summary.Cell>
                       <Table.Summary.Cell>
-
                       </Table.Summary.Cell>
                     </Table.Summary.Row>
                   </>

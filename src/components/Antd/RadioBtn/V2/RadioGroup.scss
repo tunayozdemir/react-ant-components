@@ -1,0 +1,44 @@
+.radio-group {
+  margin-bottom: 20px;
+
+  span {
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+    color: #5f6b76;
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .ant-radio-wrapper {
+    // display: inline-flex;
+    // align-items: center;
+
+    span {
+      color: #253342;
+      margin-bottom: 0px;
+    }
+
+    .ant-radio-inner {
+      top: 2px;
+      width: 24px;
+      height: 24px;
+      border: 1px solid #dee3ed;
+
+      &:after {
+        background-color: #ffc900;
+        width: 30px;
+        height: 30px;
+        top: 4px;
+        left: 4px;
+      }
+    }
+  }
+
+  .input {
+    margin-top: 22px;
+  }
+}

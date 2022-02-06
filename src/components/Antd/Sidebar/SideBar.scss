@@ -29,15 +29,16 @@
   line-height: 1.5;
 }
 .ant-layout-sider {
-  line-height: 120px;
+  // line-height: 120px;
 }
+
 [data-theme="dark"] .ant-layout-sider {
   background: #3499ec;
 }
 .ant-layout-content {
   min-height: 120px;
   color: #fff;
-  line-height: 120px;
+  // line-height: 120px;
   // background: rgba(16, 142, 233, 1);
 }
 [data-theme="dark"] .ant-layout-content {
