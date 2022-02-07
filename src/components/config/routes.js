@@ -1,6 +1,8 @@
 import Dashboard from '../../Pages/Dashboard/Dashboard'
 import Buttons from '../../Pages/Buttons/Buttons'
-import Inputs from '../../Pages/Inputs/Inputs'
+import InputPageV1 from '../../Pages/Inputs/InputPageV1'
+import InputPageV2 from '../../Pages/Inputs/InputPageV2'
+import GsmInputPage from '../../Pages/Inputs/GsmInputPage'
 import Cards from '../../Pages/Cards/Cards'
 import RadioButtons from '../../Pages/RadioButtons/RadioButtons'
 
@@ -26,8 +28,16 @@ const routes = [
     component: Buttons,
   },
   {
-    path: `${path}/Inputs`,
-    component: Inputs,
+    path: `${path}/InputPageV1`,
+    component: InputPageV1,
+  },
+  {
+    path: `${path}/InputPageV2`,
+    component: InputPageV2,
+  },
+  {
+    path: `${path}/GsmInputPage`,
+    component: GsmInputPage,
   },
   {
     path: `${path}/Cards`,

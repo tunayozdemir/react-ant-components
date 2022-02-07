@@ -67,6 +67,7 @@ const Layoute = (props) => {
             <div style={{ margin: '16px 0' }}>
               {breadCrumbView()}
             </div>
+            <hr/>
             <div className='layout-content__children'>
               {props.children}
             </div>

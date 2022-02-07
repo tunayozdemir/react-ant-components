@@ -1,8 +1,10 @@
 import React, { useState, useRef } from 'react';
-import { InputV1 } from '../../components/Antd'
+import { InputV1, InputV2 } from '../../components/Antd'
 import { Form, Row, Col, Button } from "antd";
 
-function Inputs() {
+import "./InputPage.scss"
+
+function InputPageV1() {
   const [value, setValue] = useState()
 
   const refForm = useRef()
@@ -20,6 +22,7 @@ function Inputs() {
   }
 
   return (
+
     <Form
       ref={refForm}
       name="basic"
@@ -29,7 +32,8 @@ function Inputs() {
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       autoComplete="off">
-      <Row gutter={[24, 16]}>
+
+      <Row className='inputs-container' gutter={[24, 16]}>
 
         <Col span={6}>
           <Form.Item name="input1" rules={[{ required: value ? false : true, message: 'Bu alan boş geçilemez' }]}>
@@ -46,6 +50,12 @@ function Inputs() {
             />
           </Form.Item>
         </Col>
+        <Col span={6}>
+          <Form.Item name="input3" rules={[{ required: true, message: 'Bu alan boş geçilemez' }]}>
+            <InputV2 title='test' label='Test'/>
+          </Form.Item>
+        </Col>
+
         <Col span={24}>
           <Button htmlType="submit">Gönder</Button>
           <Button onClick={onReset}>Vazgeç</Button>
@@ -55,4 +65,4 @@ function Inputs() {
   )
 }
 
-export default Inputs;
+export default InputPageV1;
