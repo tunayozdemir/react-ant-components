@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Skeleton, Card, Avatar } from 'antd';
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import PropTypes from "prop-types";
+
 
 const { Meta } = Card;
 
-function CardV1() {
-
+function CardV1(props) {
+  const {  } = props;
   const [loading, setLoading] = useState(true)
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -17,12 +19,8 @@ function CardV1() {
   return (
     <div>
       <Card
-        style={{ width: 500, marginTop: 10, marginBottom:10 }}
-        actions={[
-          <SettingOutlined key="setting" />,
-          <EditOutlined key="edit" />,
-          <EllipsisOutlined key="ellipsis" />,
-        ]}
+        {...props}
+        style={{ width: 500, marginTop: 10, marginBottom: 10 }}
       >
         <Skeleton loading={loading} avatar active>
           <Meta
@@ -35,5 +33,8 @@ function CardV1() {
     </div>
   )
 }
+CardV1.propTypes = {};
+
+CardV1.defaultProps = {}
 
 export default CardV1;

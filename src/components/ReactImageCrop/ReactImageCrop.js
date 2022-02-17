@@ -1,6 +1,8 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
-import {CardV1} from '../Antd'
+import { CardV1 } from '../Antd'
+import { Modal } from 'antd';
 import ReactCrop from 'react-image-crop';
+import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 
 import 'react-image-crop/dist/ReactCrop.css';
 import './ReactImageCrop.scss'
@@ -26,14 +28,19 @@ function generateDownload(canvas, crop) {
   );
 }
 
-
 function ReactImageCrop() {
-
   const [upImg, setUpImg] = useState();
   const imgRef = useRef(null);
   const previewCanvasRef = useRef(null);
   const [crop, setCrop] = useState({ unit: '%', width: 30, aspect: 16 / 9 });
   const [completedCrop, setCompletedCrop] = useState(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const [actions,] = useState([
+    <SettingOutlined key="setting" />,
+    <EditOutlined key="edit" onClick={() => showModal()} />,
+    <EllipsisOutlined key="ellipsis" />,
+  ])
 
   const onSelectFile = (e) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -46,6 +53,18 @@ function ReactImageCrop() {
   const onLoad = useCallback((img) => {
     imgRef.current = img;
   }, []);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
 
   useEffect(() => {
     if (!completedCrop || !previewCanvasRef.current || !imgRef.current) {
@@ -82,40 +101,45 @@ function ReactImageCrop() {
 
   return (
     <div>
-      <CardV1/>
-      <div>
-        <input type="file" accept="image/*" onChange={onSelectFile} />
-      </div>
-      <ReactCrop
-        src={upImg}
-        onImageLoaded={onLoad}
-        crop={crop}
-        onChange={(c) => setCrop(c)}
-        onComplete={(c) => setCompletedCrop(c)}
-      />
-      <div>
-        <canvas
-          ref={previewCanvasRef}
-          // Rounding is important so the canvas width and height matches/is a multiple for sharpness.
-          style={{
-            width: Math.round(completedCrop?.width ?? 0),
-            height: Math.round(completedCrop?.height ?? 0)
-          }}
+      <CardV1 actions={actions} />
+      <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+        <div>
+          <input type="file" accept="image/*" onChange={onSelectFile} />
+        </div>
+        <ReactCrop
+          src={upImg}
+          onImageLoaded={onLoad}
+          crop={crop}
+          onChange={(c) => setCrop(c)}
+          onComplete={(c) => setCompletedCrop(c)}
         />
-      </div>
-      <p>
-        Note that the download below won't work in this sandbox due to the
-        iframe missing 'allow-downloads'. It's just for your reference.
-      </p>
-      <button
-        type="button"
-        disabled={!completedCrop?.width || !completedCrop?.height}
-        onClick={() =>
-          generateDownload(previewCanvasRef.current, completedCrop)
-        }
-      >
-        Download cropped image
-      </button>
+        <div>
+          <canvas
+            ref={previewCanvasRef}
+            // Rounding is important so the canvas width and height matches/is a multiple for sharpness.
+            style={{
+              width: Math.round(completedCrop?.width ?? 0),
+              height: Math.round(completedCrop?.height ?? 0)
+            }}
+          />
+        </div>
+        <p>
+          Note that the download below won't work in this sandbox due to the
+          iframe missing 'allow-downloads'. It's just for your reference.
+        </p>
+        <button
+          type="button"
+          disabled={!completedCrop?.width || !completedCrop?.height}
+          onClick={() =>
+            generateDownload(previewCanvasRef.current, completedCrop)
+          }
+        >
+          Download cropped image
+        </button>
+      </Modal>
+
+
+
     </div>
   )
 }
