@@ -6,6 +6,8 @@ import GsmInputPage from '../../Pages/Inputs/GsmInputPage'
 import Cards from '../../Pages/Cards/Cards'
 import RadioButtons from '../../Pages/RadioButtons/RadioButtons'
 
+import ImageCrop from '../../Pages/ImageCrop/ImageCrop'
+
 import TablePageV1 from '../../Pages/Tables/TablePageV1'
 import TablePageV2 from '../../Pages/Tables/TablePageV2'
 import TablePageV3 from '../../Pages/Tables/TablePageV3'
@@ -38,6 +40,10 @@ const routes = [
   {
     path: `${path}/GsmInputPage`,
     component: GsmInputPage,
+  },
+  {
+    path: `${path}/ImageCrop`,
+    component: ImageCrop,
   },
   {
     path: `${path}/Cards`,

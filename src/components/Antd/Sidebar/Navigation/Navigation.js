@@ -40,11 +40,7 @@ const Navigation = () => {
         </SubMenu>
       </SubMenu>
       <Menu.Item key="21"><Link to="/GsmInputPage">React Intl Tel Input</Link></Menu.Item>
-      <SubMenu key="sub4" title="Material-Ui">
-        <Menu.ItemGroup key="g4">
-          <Menu.Item key="22"><Link to="/TablePageV1">Lorem1</Link></Menu.Item>
-        </Menu.ItemGroup>
-      </SubMenu>
+      <Menu.Item key="22"><Link to="/ImageCrop">React Image Crop</Link></Menu.Item>
     </Menu>
   )
 }
