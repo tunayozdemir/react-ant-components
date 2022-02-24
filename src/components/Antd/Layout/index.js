@@ -4,12 +4,11 @@ import PropTypes from "prop-types";
 import SideBar from "../Sidebar/SideBar"
 import Title from 'antd/lib/typography/Title'
 import { Layout, Avatar, Breadcrumb } from 'antd';
-// import { EnterOutlined } from '@ant-design/icons'
 import Lion from '../../../assets/image/lion.png'
 import AntdLogo from '../../../assets/icons/antdLogo.svg'
 import './Layout.scss'
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Footer, Content } = Layout;
 const Layoute = (props) => {
   const location = useLocation()
 
@@ -47,7 +46,6 @@ const Layoute = (props) => {
 
   return (
     <Layout key="1" className='layout'>
-
       <Header className='layout-header'>
         <div className='layout-header__left-side'>
           <Avatar className='layout-header__left-side-logo' size="large" src={AntdLogo} />
@@ -55,25 +53,17 @@ const Layoute = (props) => {
         </div>
         <Avatar size="large" src={Lion} />
       </Header>
-
       <Layout key="2" className='layout-sider'>
-
-        <Sider className='layout-sider__wrap'>
-          <SideBar />
-        </Sider>
-
         <Content className='layout-content'>
-          <Content className='layout-content__breadcrumb' style={{ padding: '0 50px' }}>
-            <div style={{ margin: '16px 0' }}>
-              {breadCrumbView()}
-            </div>
-            <hr/>
+          <SideBar />
+          <Content className='layout-content__breadcrumb'>
+            {breadCrumbView()}
+            <hr />
             <div className='layout-content__children'>
               {props.children}
             </div>
           </Content>
         </Content>
-
       </Layout>
       <Footer>Footer</Footer>
     </Layout>
