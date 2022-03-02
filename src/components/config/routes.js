@@ -15,6 +15,7 @@ import TablePageV4 from '../../Pages/Tables/TablePageV4'
 import TablePageV5 from '../../Pages/Tables/TablePageV5'
 import TablePageV6 from '../../Pages/Tables/TablePageV6'
 import TablePageV7_Dnd from '../../Pages/Tables/TablePageV7_Dnd'
+import Clipboard from '../../Pages/Clipboard/Clipboard'
 
 
 const path = '';
@@ -81,6 +82,11 @@ const routes = [
     path: `${path}/TablePageV7_Dnd`,
     component: TablePageV7_Dnd,
   },
+  {
+    path: `${path}/Clipboard`,
+    component: Clipboard,
+  },
+
 
 
 ];

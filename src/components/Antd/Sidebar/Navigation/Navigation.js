@@ -50,6 +50,7 @@ const Navigation = (props) => {
         </SubMenu>
         <Menu.Item key="21" icon={<PhoneOutlined />}><Link to="/GsmInputPage">React Intl Tel Input</Link></Menu.Item>
         <Menu.Item key="22" icon={<ExpandOutlined />}><Link to="/ImageCrop">React Image Crop</Link></Menu.Item>
+        <Menu.Item key="23" icon={<ExpandOutlined />}><Link to="/Clipboard">Clipboard</Link></Menu.Item>
       </Menu>
     </>
   )
