@@ -20,8 +20,8 @@ function RadioButtons() {
             defaultValue={1}
             value={{ value: 1, inputValue: '' }}
             onChange={(value) => { console.log(value) }}
-            text="Turkcell veya grup şirketleriyle daha evvel feshedilmiş bir sözleşme var mı?"
-            placeholder="Turkcell veya grup şirketleriyle daha evvel feshedilmiş bir sözleşme var mı?"
+            text="Grup şirketleriyle daha evvel feshedilmiş bir sözleşme var mı?"
+            placeholder="Grup şirketleriyle daha evvel feshedilmiş bir sözleşme var mı?"
           />
         </Col>
 

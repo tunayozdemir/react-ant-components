@@ -1,11 +1,12 @@
 import React from 'react';
 import 'antd/dist/antd.css';
+import DatePicker from '../../components/DatePickerReact/DatePickerReact'
 
 function Dashboard() {
 
   return (
     <div >
-      Dasboard...
+      <DatePicker/>
     </div>
   )
 }
