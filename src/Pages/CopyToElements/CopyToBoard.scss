@@ -1,0 +1,135 @@
+.failure-models {
+  .ant-collapse {
+    &-arrow {
+      svg {
+        font-size: 16px !important;
+      }
+    }
+
+    &-header {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 2.2 !important;
+      color: #25265e !important;
+      margin-right: 28px;
+      padding: 13px 0px !important;
+    }
+
+    &-item {
+      margin-bottom: 26px;
+      border-bottom: 0;
+      overflow: hidden;
+      border-radius: 3px;
+      box-shadow: 0 1px 2px 0 rgba(63, 63, 68, 0.15),
+        0 0 0 1px rgba(63, 63, 68, 0.05);
+      background-color: #fff;
+
+      &:nth-child(even) {
+        background: white !important;
+        .ant-collapse-header {
+          background: white !important;
+        }
+      }
+      &:after {
+        display: none;
+      }
+
+      &-active {
+        .ant-collapse-arrow {
+          svg {
+            transform: rotate(180deg) !important;
+          }
+        }
+      }
+    }
+
+    &-content {
+      border-top: 0;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: calc(100% - 56px);
+        height: 1px;
+        background: #f4f4f7;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+
+    &-extra {
+      margin-right: 0px;
+      .ant-btn {
+        min-width: 150px;
+        border-radius: 3px;
+        border: 1px solid #044da1;
+        span {
+          font-size: 14px;
+          font-weight: 600;
+          color: #044da1;
+        }
+      }
+    }
+  }
+  &__info {
+    min-height: 63px;
+    margin-bottom: 26px;
+    padding: 13px 20px 12px;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px 0 rgba(63, 63, 68, 0.15),
+      0 0 0 1px rgba(63, 63, 68, 0.05);
+    background-color: #ddf1ff;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    span {
+      font-size: 16px;
+      font-weight: 600;
+      color: #044da1;
+    }
+
+  }
+
+  &__btn-group {
+    display: flex;
+    justify-content: space-between;
+
+    > div {
+      width: 200px;
+      display: flex;
+
+      .ant-btn {
+        border: 1px solid #044da1 !important;
+        border-radius: 3px;
+        padding: 9px 9px;
+        text-align: center;
+        span {
+          font-size: 14px;
+          font-weight: 600;
+          color: #044da1;
+        }
+
+        &:first-child {
+          margin-right: 15px;
+          min-width: 110px;
+        }
+      }
+
+      &:last-child {
+        width: 124px;
+
+        .ant-btn {
+          min-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.anticon-info-circle{
+  font-size: 28px !important;
+  margin-right: 15px;
+  font-weight: 800;
+}

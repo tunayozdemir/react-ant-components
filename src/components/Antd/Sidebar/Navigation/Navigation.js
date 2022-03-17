@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { Menu, Switch } from 'antd';
 import 'antd/dist/antd.css';
@@ -48,9 +48,14 @@ const Navigation = (props) => {
             <Menu.Item key="20"><Link to="/TablePageV7_Dnd">Table Drag and Drop</Link></Menu.Item>
           </SubMenu>
         </SubMenu>
-        <Menu.Item key="21" icon={<PhoneOutlined />}><Link to="/GsmInputPage">React Intl Tel Input</Link></Menu.Item>
-        <Menu.Item key="22" icon={<ExpandOutlined />}><Link to="/ImageCrop">React Image Crop</Link></Menu.Item>
-        <Menu.Item key="23" icon={<ExpandOutlined />}><Link to="/Clipboard">Clipboard</Link></Menu.Item>
+        <SubMenu key="sub4" title="Kopyalama">
+          <Menu.Item key="21" icon={<ExpandOutlined />}><Link to="/CopyToBoard">Copy To Board</Link></Menu.Item>
+          <Menu.Item key="22" icon={<ExpandOutlined />}><Link to="/CopyToText">Copy To Text</Link></Menu.Item>
+        </SubMenu>
+        <SubMenu key="sub5" title="Kesme">
+          <Menu.Item key="23" icon={<ExpandOutlined />}><Link to="/ImageCrop">React Image Crop</Link></Menu.Item>
+        </SubMenu>
+        <Menu.Item key="24" icon={<PhoneOutlined />}><Link to="/GsmInputPage">React Intl Tel Input</Link></Menu.Item>
       </Menu>
     </>
   )

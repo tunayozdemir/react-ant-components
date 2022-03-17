@@ -15,7 +15,9 @@ import TablePageV4 from '../../Pages/Tables/TablePageV4'
 import TablePageV5 from '../../Pages/Tables/TablePageV5'
 import TablePageV6 from '../../Pages/Tables/TablePageV6'
 import TablePageV7_Dnd from '../../Pages/Tables/TablePageV7_Dnd'
-import Clipboard from '../../Pages/Clipboard/Clipboard'
+
+import CopyToBoard from '../../Pages/CopyToElements/CopyToBoard'
+import CopyToText from '../../Pages/CopyToElements/CopyToText'
 
 
 const path = '';
@@ -83,11 +85,13 @@ const routes = [
     component: TablePageV7_Dnd,
   },
   {
-    path: `${path}/Clipboard`,
-    component: Clipboard,
+    path: `${path}/CopyToBoard`,
+    component: CopyToBoard,
   },
-
-
+  {
+    path: `${path}/CopyToText`,
+    component: CopyToText,
+  },
 
 ];
 
