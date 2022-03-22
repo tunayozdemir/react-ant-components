@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
-import { InputV2 } from '../../components/Antd'
+import { AntInput } from '../../components/Antd'
 import { Form, Row, Col, Button } from "antd";
 
-import "./InputPage.scss"
+import "./InputForm.scss"
 
-function InputPageV1() {
+function InputForm() {
   const refForm = useRef()
 
   const onFinish = (values) => {
@@ -32,25 +32,14 @@ function InputPageV1() {
       autoComplete="off">
 
       <Row className='inputs-container' gutter={[24, 1]}>
-        <Col span={6}>
+        <Col span={5}>
           <Form.Item name="input3" rules={[{ required: true, message: 'Bu alan boş geçilemez' }]}>
-            <InputV2
-              type="text"
-              title='Text'
-              label='Label...'
-              content="Sub Title 1"
-            />
+            <AntInput type="text" title='Text'  label='Label...' content="Sub Title 1" />
           </Form.Item>
         </Col>
-        <Col span={6}>
+        <Col span={5}>
           <Form.Item name="input4" rules={[{ required: true, message: 'Bu alan boş geçilemez' }]}>
-            <InputV2
-              type="number"
-              title='Number'
-              label='Label...'
-              content="Sub Title 2"
-              onKeyDown={(evt) => evt.key === 'e' && evt.preventDefault()}
-            />
+            <AntInput type="number"title='Number'label='Label...'content="Sub Title 2" onKeyDown={(evt) => evt.key === 'e' && evt.preventDefault()}/>
           </Form.Item>
         </Col>
 
@@ -63,4 +52,4 @@ function InputPageV1() {
   )
 }
 
-export default InputPageV1;
+export default InputForm;

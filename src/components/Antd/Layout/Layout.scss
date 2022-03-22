@@ -17,6 +17,7 @@
   }
 
   &-content {
+    width: calc(100% - 2px);
     display: flex;
     &__children {
       color: black;

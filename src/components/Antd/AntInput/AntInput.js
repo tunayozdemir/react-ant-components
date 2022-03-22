@@ -3,9 +3,9 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import { Input } from 'antd';
 
-import './InputV2.scss'
+import './AntInput.scss'
 
-const InputV2 = (props) => {
+const AntInput = (props) => {
   const { title, label, value, content } = props
   const [inputFocused, setInputFocused] = useState(false);
 
@@ -38,8 +38,8 @@ const InputV2 = (props) => {
   }, [value]);
 
   return (
-    <div className={classNames('input-v2', { 'wrapper': inputFocused })} >
-      <h5 className='input-v2__title'>{title}</h5>
+    <div className={classNames('ant-inputs', { 'wrapper': inputFocused })} >
+      <h5 className='ant-inputs__title'>{title}</h5>
       <Input
         {...props}
         value={value}
@@ -47,20 +47,20 @@ const InputV2 = (props) => {
         onFocus={focusInput}
         onChange={(e) => { onChange(e) }}
       />
-      <label className='input-v2__label'>{label}</label>
-      <span className='input-v2__content'>{content}</span>
+      <label className='ant-inputs__label'>{label}</label>
+      <span className='ant-inputs__content'>{content}</span>
     </div>
   )
 }
 
-InputV2.propTypes = {
+AntInput.propTypes = {
   title: PropTypes.string,
   label: PropTypes.string,
 };
 
-InputV2.defaultProps = {
+AntInput.defaultProps = {
   title: "",
   label: "",
 }
 
-export default InputV2;
+export default AntInput;

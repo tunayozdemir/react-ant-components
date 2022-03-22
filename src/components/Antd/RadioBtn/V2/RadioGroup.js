@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from "prop-types";
 import { Radio } from 'antd';
-import { InputV1 } from "../../"
+import { AntInput } from "../../../Antd"
 import './RadioGroup.scss'
 
 const RadioGroup = (props) => {
@@ -29,7 +29,7 @@ const RadioGroup = (props) => {
         {...props.onChange({ value: checkBoxValue, inputValue: inpVal })}
         onChange={handleChange}
       />
-      {checkBoxValue === 0 ? <InputV1 label={placeholder} value={inpVal}
+      {checkBoxValue === 0 ? <AntInput label={placeholder} value={inpVal}
         onChange={inputHandleChange} /> : null}
     </div>
   )

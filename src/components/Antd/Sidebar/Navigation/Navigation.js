@@ -32,10 +32,7 @@ const Navigation = (props) => {
         <SubMenu key="sub1" icon={<DeploymentUnitOutlined />} title="Antd Components">
           <Menu.ItemGroup key="g1">
             <Menu.Item key="2"><Link to="/Buttons">Buttons</Link></Menu.Item>
-            <SubMenu key="sub2" title="Inputs">
-              <Menu.Item key="3"><Link to="/InputPageV1">Input V1</Link></Menu.Item>
-              <Menu.Item key="4"><Link to="/InputPageV2">Input V12</Link></Menu.Item>
-            </SubMenu>
+            <Menu.Item key="4"><Link to="/InputForm">InputForm</Link></Menu.Item>
             <Menu.Item key="5"><Link to="/Cards">Cards</Link></Menu.Item>
             <Menu.Item key="6"><Link to="/RadioButtons">Radio Buttons</Link></Menu.Item>
           </Menu.ItemGroup>
