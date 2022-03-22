@@ -1,11 +1,8 @@
-
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { Collapse, Row, Col, Button, notification } from 'antd';
-import { HorizontalTable } from '../../components/Antd'
+import { HorizontalTable } from "../../components/Antd"
 import { CopyOutlined, InfoCircleOutlined } from '@ant-design/icons';
-
-
-import "./CopyToBoard.scss"
+import "./CopyToBoard.scss";
 
 const { Panel } = Collapse;
 
@@ -15,33 +12,32 @@ const contentList = [
   { id: 3, title: "Et quidem rerum necessitatibus saepe eveniet, ut alterum esse vult." },
 ]
 
-const dataSource = [
-  { key: '1', title: 'BNG Adı :', text: "lipsumsitametdolo" },
-  { key: '2', title: 'BNG Port :', text: "loremipsumdolorsita" },
-  { key: '3', title: 'Son Bağlantı Zamanı :', text: "2020-09-08 15:15:25" },
-  { key: '4', title: 'Modem IP :', text: "b4-343535-35353-343" },
-  { key: '5', title: 'Modem MAC :', text: "b4-343535-35353-343" },
-  { key: '6', title: 'Altyapı :', text: "Fiber" },
-  { key: '7', title: 'Kullancı ID :', text: "34564783@fiber" },
-  { key: '8', title: 'Data Kaynağı :', text: "Solarc" },
-];
-
 const columns = [
   { title: '', dataIndex: 'title', key: 'title', width: '25%' },
+  { title: '', dataIndex: 'dot', key: 'dot', width: "1px" },
   { title: '', dataIndex: 'text', key: 'text', },
 ];
 
+const dataSource = [
+  { key: '1', title: 'BNG Adı', dot: ":", text: "lipsumsitametdolo" },
+  { key: '2', title: 'BNG Port', dot: ":", text: "loremipsumdolorsita" },
+  { key: '3', title: 'Son Bağlantı Zamanı', dot: ":", text: "2020-09-08 15:15:25" },
+  { key: '4', title: 'Modem IP', dot: ":", text: "b4-343535-35353-343" },
+  { key: '5', title: 'Modem MAC', dot: ":", text: "b4-343535-35353-343" },
+  { key: '6', title: 'Altyapı', dot: ":", text: "Fiber" },
+  { key: '7', title: 'Kullancı ID', dot: ":", text: "34564783@fiber" },
+  { key: '8', title: 'Data Kaynağı', dot: ":", text: "Solarc" },
+];
 
 function CopyToBoard() {
   const [activeColleps, setActiveColleps] = useState()
-
 
   function callback(key) {
     console.log("key", key)
     setActiveColleps(key)
   }
 
-  function copyToClipboarded(html) {
+  function copyToClipboard(html) {
     var container = document.createElement('table');
     container.innerHTML = html;
     // container.style.position = 'fixed';
@@ -54,7 +50,6 @@ function CopyToBoard() {
     window.getSelection().addRange(range);
     document.execCommand('copy');
     document.body.removeChild(container);
-    console.log("container :", container)
   }
 
   const showNotification = (type, messageDescription) => {
@@ -74,26 +69,24 @@ function CopyToBoard() {
     setTimeout(() => {
       var htmlEditor = document.getElementById(index)
       if (htmlEditor !== null) {
-        copyToClipboarded(htmlEditor.innerHTML);
+        copyToClipboard(htmlEditor.innerHTML);
         showNotification("success", "Panoya kopyalandı.");
       } else {
         showNotification("error", "Panoya kopyalama işlemi başarısız.");
       }
     }, 100);
-
   }
 
   return (
-
-    <div className="failure-models">
-      <div className="failure-models__info">
+    <div className="copy-to-board">
+      <div className="copy-to-board__info">
         <InfoCircleOutlined />
         <span>Aşağıdan genel arıza şablonlarını açıp kopyalayabilirsiniz.</span>
       </div>
-      <Collapse onChange={callback} activeKey={activeColleps}>
-        {
-          contentList.map((item, index) => {
-            return (
+      {
+        contentList.map((item, index) => {
+          return (
+            <Collapse onChange={callback} activeKey={activeColleps}>
               <Panel
                 key={index}
                 header={item.title}
@@ -109,11 +102,11 @@ function CopyToBoard() {
                   </Col>
                 </Row>
               </Panel>
-            )
-          })
-        }
-      </Collapse>
-      <div className='failure-models__btn-group'>
+            </Collapse>
+          )
+        })
+      }
+      <div className='copy-to-board__btn-group'>
         <div>
           <Button>İptal</Button>
           <Button>Müşteri Hattan Düştü</Button>
@@ -123,5 +116,6 @@ function CopyToBoard() {
     </div>
   )
 }
+
 
 export default CopyToBoard;

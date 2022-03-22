@@ -1,5 +1,8 @@
-.failure-models {
+.copy-to-board{
   .ant-collapse {
+    border: 0 !important;
+    border-radius: 8px !important;
+
     &-arrow {
       svg {
         font-size: 16px !important;
@@ -17,12 +20,13 @@
 
     &-item {
       margin-bottom: 26px;
-      border-bottom: 0;
+      border-bottom: 0 !important;
       overflow: hidden;
-      border-radius: 3px;
+      box-sizing: border-box;
       box-shadow: 0 1px 2px 0 rgba(63, 63, 68, 0.15),
         0 0 0 1px rgba(63, 63, 68, 0.05);
       background-color: #fff;
+      border-radius: 8px !important;
 
       &:nth-child(even) {
         background: white !important;
@@ -32,12 +36,19 @@
       }
       &:after {
         display: none;
+       
       }
-
+      .ant-collapse-arrow {
+        margin-left: 12px ;
+        svg {
+          transform: rotate(90deg) !important;
+        }
+      }
       &-active {
         .ant-collapse-arrow {
+          
           svg {
-            transform: rotate(180deg) !important;
+            transform: rotate(270deg) !important;
           }
         }
       }
@@ -52,7 +63,7 @@
         position: absolute;
         width: calc(100% - 56px);
         height: 1px;
-        background: #f4f4f7;
+        background: transparent;
         left: 0;
         right: 0;
         margin: 0 auto;
@@ -89,7 +100,6 @@
       font-weight: 600;
       color: #044da1;
     }
-
   }
 
   &__btn-group {
@@ -104,6 +114,8 @@
         border: 1px solid #044da1 !important;
         border-radius: 3px;
         padding: 9px 9px;
+        height: 40px;
+        box-sizing: border-box;
         text-align: center;
         span {
           font-size: 14px;

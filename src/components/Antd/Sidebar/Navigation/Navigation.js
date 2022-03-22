@@ -8,6 +8,7 @@ import {
   ExpandOutlined,
   DeploymentUnitOutlined,
   PieChartOutlined,
+  CopyOutlined,
 } from '@ant-design/icons';
 
 const { SubMenu } = Menu;
@@ -49,8 +50,8 @@ const Navigation = (props) => {
           </SubMenu>
         </SubMenu>
         <SubMenu key="sub4" title="Kopyalama">
-          <Menu.Item key="21" icon={<ExpandOutlined />}><Link to="/CopyToBoard">Copy To Board</Link></Menu.Item>
-          <Menu.Item key="22" icon={<ExpandOutlined />}><Link to="/CopyToText">Copy To Text</Link></Menu.Item>
+          <Menu.Item key="21" icon={<CopyOutlined />}><Link to="/CopyToBoard">Copy To Board</Link></Menu.Item>
+          <Menu.Item key="22" icon={<CopyOutlined />}><Link to="/CopyToText">Copy To Text</Link></Menu.Item>
         </SubMenu>
         <SubMenu key="sub5" title="Kesme">
           <Menu.Item key="23" icon={<ExpandOutlined />}><Link to="/ImageCrop">React Image Crop</Link></Menu.Item>
