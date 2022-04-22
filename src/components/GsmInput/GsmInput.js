@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import classNames from "classnames";
 import PropTypes from 'prop-types';
 import IntlTelInput from 'react-intl-tel-input';
@@ -7,13 +7,12 @@ import IntlTelInput from 'react-intl-tel-input';
 import 'react-intl-tel-input/dist/main.css';
 import './GsmInput.scss'
 
-
-
 const GsmInput = (props) => {
-  const { placeholder, fieldName, fieldId, onChange, refInputVal } = props
+  const { placeholder, fieldName, fieldId, onChange } = props
   const [isFocus, setIsFocus] = useState(false)
   const [isLabel, setLabel] = useState(false)
 
+  const refInputVal = useRef();
 
   const onLabel = () => {
     setLabel("wrapper")
@@ -31,24 +30,15 @@ const GsmInput = (props) => {
     }
   }
 
-  const handleWrapper = () => {
-    const val = refInputVal.current.state.value
-    setIsFocus(true)
-    if (val) {
-      setLabel("wrapper")
-    } else {
-      setLabel("")
-    }
-  }
-
   useEffect(() => {
-
-    setTimeout(() => {
-      window.intlTelInputUtils.numberFormat.INTERNATIONAL = window.intlTelInputUtils.numberFormat;
-      window.intlTelInputUtils.numberFormat.NATIONAL = window.intlTelInputUtils.numberFormat;
+    const timer = setInterval(() => {
+      if (window?.intlTelInputUtils) {
+        window.intlTelInputUtils.numberFormat.INTERNATIONAL = window.intlTelInputUtils.numberFormat;
+        window.intlTelInputUtils.numberFormat.NATIONAL = window.intlTelInputUtils.numberFormat;
+        clearInterval(timer);
+      }
     }, 1000);
   }, [])
-
 
 
   return (
@@ -67,6 +57,10 @@ const GsmInput = (props) => {
         onPhoneNumberChange={(state, value) => {
           onChange(value.replace(/^(?!\s)[A-Za-z\s]+$/g, ''))
         }}
+        // onPhoneNumberChange={(state, value, tempArray, dialCode) => {
+        //   onChange(value.replace(/\D/g, '')),
+        //   console.log("State: ",state, "value: ",value.slice(0, 11), "dialCode :",dialCode, "tempArray: ", tempArray )
+        // }}
         onPhoneNumberFocus={onLabel}
         onPhoneNumberBlur={onLabelBlur}
         separateDialCode={true}
@@ -76,7 +70,7 @@ const GsmInput = (props) => {
         format={true}
       >
       </IntlTelInput>
-      <label onClick={handleWrapper}>{placeholder}</label>
+      <label onClick={() => { setIsFocus(true); setLabel("wrapper")}}>{placeholder}</label>
     </div>
   )
 }
@@ -86,13 +80,13 @@ GsmInput.propTypes = {
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
   fieldName: PropTypes.string,
-  fieldId: PropTypes.number,
-  refInputVal: PropTypes.any,
+  fieldId: PropTypes.number
 };
 
 GsmInput.defaultProps = {
   placeholder: "Telefon Numarası",
-  onChange: () => { }
+  onChange: () => {
+  }
 }
 
 export default GsmInput;

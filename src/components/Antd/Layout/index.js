@@ -5,7 +5,6 @@ import SideBar from "../Sidebar/SideBar"
 import Title from 'antd/lib/typography/Title'
 import { Layout, Avatar, Breadcrumb } from 'antd';
 import Lion from '../../../assets/image/lion.png'
-import AntdLogo from '../../../assets/icons/antdLogo.svg'
 import './Layout.scss'
 
 const { Header, Footer, Content } = Layout;
@@ -48,7 +47,7 @@ const Layoute = (props) => {
     <Layout key="1" className='layout'>
       <Header className='layout-header'>
         <div className='layout-header__left-side'>
-          <Avatar className='layout-header__left-side-logo' size="large" src={AntdLogo} />
+          <Avatar className='layout-header__left-side-logo' size="large"  />
           <Title level={3}>Ant Desing</Title>
         </div>
         <Avatar size="large" src={Lion} />

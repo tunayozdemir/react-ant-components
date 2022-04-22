@@ -53,7 +53,6 @@ const Navigation = (props) => {
         <SubMenu key="sub5" title="Kesme">
           <Menu.Item key="23" icon={<ExpandOutlined />}><Link to="/ImageCrop">React Image Crop</Link></Menu.Item>
         </SubMenu>
-        <Menu.Item key="24" icon={<PhoneOutlined />}><Link to="/GsmInputPage">React Intl Tel Input</Link></Menu.Item>
       </Menu>
     </>
   )

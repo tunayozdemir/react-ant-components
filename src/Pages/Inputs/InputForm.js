@@ -40,12 +40,12 @@ function InputForm() {
         </Col>
         <Col span={5}>
           <Form.Item name="input4" rules={[{ required: true, message: 'Bu alan boş geçilemez' }]}>
-            <AntInput type="number"title='Number'label='Label...'content="Sub Title 2" onKeyDown={(evt) => evt.key === 'e' && evt.preventDefault()}/>
+            <AntInput type="number" title='Number'label='Label...'content="Sub Title 2" onKeyDown={(evt) => evt.key === 'e' && evt.preventDefault()}/>
           </Form.Item>
         </Col>
         <Col span={5}>
-          <Form.Item name="input4" rules={[{ required: true, message: 'Bu alan boş geçilemez' }]}>
-            <GsmInput type="phone" title='Text'  label='Label...' content="Sub Title 1" />
+          <Form.Item name="input5" rules={[{ required: true, message: 'Bu alan boş geçilemez' }]}>
+            <GsmInput type="phone" title='Telefon'  label='Label...' content="Sub Title 1" />
           </Form.Item>
         </Col>
 
@@ -54,6 +54,7 @@ function InputForm() {
           <Button onClick={onReset}>Vazgeç</Button>
         </Col>
       </Row>
+      
     </Form>
   )
 }

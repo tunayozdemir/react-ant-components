@@ -1,7 +1,6 @@
 import Dashboard from '../../Pages/Dashboard/Dashboard'
 import Buttons from '../../Pages/Buttons/Buttons'
 import InputForm from '../../Pages/Inputs/InputForm'
-import GsmInputPage from '../../Pages/Inputs/GsmInputPage'
 import Cards from '../../Pages/Cards/Cards'
 import RadioButtons from '../../Pages/RadioButtons/RadioButtons'
 import ImageCrop from '../../Pages/ImageCrop/ImageCrop'
@@ -31,10 +30,6 @@ const routes = [
   {
     path: `${path}/InputForm`,
     component: InputForm,
-  },
-  {
-    path: `${path}/GsmInputPage`,
-    component: GsmInputPage,
   },
   {
     path: `${path}/ImageCrop`,
