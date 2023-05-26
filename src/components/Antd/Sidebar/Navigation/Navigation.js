@@ -44,16 +44,19 @@ const Navigation = (props) => {
             <Menu.Item key="18"><Link to="/TablePageV5">Table V5</Link></Menu.Item>
             <Menu.Item key="19"><Link to="/TablePageV6">Table V6</Link></Menu.Item>
             <Menu.Item key="20"><Link to="/TablePageV7_Dnd">Table Drag and Drop</Link></Menu.Item>
+            <Menu.Item key="21"><Link to="/TablePageV8">Table V8</Link></Menu.Item>
+            <Menu.Item key="27"><Link to="/TablePageV9_Dynamic">TablePageV9 Dynamic</Link></Menu.Item>
           </SubMenu>
         </SubMenu>
         <SubMenu key="sub4" title="Kopyalama">
-          <Menu.Item key="21" icon={<CopyOutlined />}><Link to="/CopyToBoard">Copy To Board</Link></Menu.Item>
-          <Menu.Item key="22" icon={<CopyOutlined />}><Link to="/CopyToText">Copy To Text</Link></Menu.Item>
+          <Menu.Item key="22" icon={<CopyOutlined />}><Link to="/CopyToBoard">Copy To Board</Link></Menu.Item>
+          <Menu.Item key="23" icon={<CopyOutlined />}><Link to="/CopyToText">Copy To Text</Link></Menu.Item>
         </SubMenu>
         <SubMenu key="sub5" title="Kesme">
-          <Menu.Item key="23" icon={<ExpandOutlined />}><Link to="/ImageCrop">React Image Crop</Link></Menu.Item>
+          <Menu.Item key="24" icon={<ExpandOutlined />}><Link to="/ImageCrop">React Image Crop</Link></Menu.Item>
         </SubMenu>
-        <Menu.Item key="24" icon={<PhoneOutlined />}><Link to="/GsmInputPage">React Intl Tel Input</Link></Menu.Item>
+        <Menu.Item key="25" icon={<PhoneOutlined />}><Link to="/GsmInputPage">React Intl Tel Input</Link></Menu.Item>
+        <Menu.Item key="26" icon={<PhoneOutlined />}><Link to="/CheckboxComponent">Checkbox</Link></Menu.Item>
       </Menu>
     </>
   )

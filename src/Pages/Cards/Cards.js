@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import { CardV1 } from '../../components/Antd'
+import { AntdCard } from '../../components/Antd'
 
 import './Cards.scss'
 
 const cardData = [
-  { id: '0', item: <CardV1 /> },
-  { id: '1', item: <CardV1 /> },
-  { id: '2', item: <CardV1 /> },
-  { id: '4', item: <CardV1 /> },
-  { id: '5', item: <CardV1 /> },
-  { id: '6', item: <CardV1 /> },
-  { id: '7', item: <CardV1 /> },
-  { id: '8', item: <CardV1 /> }
+  { id: '0', item: <AntdCard /> },
+  { id: '1', item: <AntdCard /> },
+  { id: '2', item: <AntdCard /> },
+  { id: '4', item: <AntdCard /> },
+  { id: '5', item: <AntdCard /> },
+  { id: '6', item: <AntdCard /> },
+  { id: '7', item: <AntdCard /> },
+  { id: '8', item: <AntdCard /> }
 
 ]
 

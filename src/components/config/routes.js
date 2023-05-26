@@ -12,8 +12,11 @@ import TablePageV4 from '../../Pages/Tables/TablePageV4'
 import TablePageV5 from '../../Pages/Tables/TablePageV5'
 import TablePageV6 from '../../Pages/Tables/TablePageV6'
 import TablePageV7_Dnd from '../../Pages/Tables/TablePageV7_Dnd'
+import TablePageV8 from '../../Pages/Tables/TablePageV8'
+import TablePageV9_Dynamic from '../../Pages/Tables/TablePageV9_Dynamic'
 import CopyToBoard from '../../Pages/CopyToElements/CopyToBoard'
 import CopyToText from '../../Pages/CopyToElements/CopyToText'
+import CheckboxComponent from '../../Pages/CheckboxComponent/CheckboxComponent'
 
 
 const path = '';
@@ -77,6 +80,16 @@ const routes = [
     component: TablePageV7_Dnd,
   },
   {
+    path: `${path}/TablePageV9_Dynamic`,
+    component:   TablePageV9_Dynamic,
+  },
+
+
+  {
+    path: `${path}/TablePageV8`,
+    component: TablePageV8,
+  },
+  {
     path: `${path}/CopyToBoard`,
     component: CopyToBoard,
   },
@@ -84,7 +97,12 @@ const routes = [
     path: `${path}/CopyToText`,
     component: CopyToText,
   },
+  {
+    path: `${path}/CheckboxComponent`,
+    component: CheckboxComponent,
+  },
 
+  
 ];
 
 export default routes;

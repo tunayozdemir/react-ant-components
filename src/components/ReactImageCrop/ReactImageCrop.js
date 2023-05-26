@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
-import { CardV1 } from '../Antd'
+import { AntdCard } from '../Antd'
 import { Modal } from 'antd';
 import ReactCrop from 'react-image-crop';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
@@ -101,7 +101,7 @@ function ReactImageCrop() {
 
   return (
     <div>
-      <CardV1 actions={actions} />
+      <AntdCard actions={actions} />
       <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
         <div>
           <input type="file" accept="image/*" onChange={onSelectFile} />

@@ -8,7 +8,6 @@ function App() {
   const routeComponents = Routes.map(({ path, component }, index) => {
     return <Route exact path={path} key={index} component={component} />
   })
-  console.log("routeComponents :", routeComponents)
   return (
     <Router basename="/">
       <Layouts>

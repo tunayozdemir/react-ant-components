@@ -49,8 +49,8 @@ function TableV1() {
               type: 'checkbox',
               selectedRowKeys: defaultSelectRow,
               onChange: (keys) => { setDefaultSelectRow(keys) },
-              onSelect: (reacor) => { console.log({ reacor }) },
-              getCheckboxProps: (record) => ({ disabled: record.Age === '33' }),
+              onSelect: (record) => { console.log({ record }) },
+              getCheckboxProps: (record) => ({ disabled: record.age === '33' }),
               hideSelectAll: false,
               selections: [
                 Table.SELECTION_NONE, {

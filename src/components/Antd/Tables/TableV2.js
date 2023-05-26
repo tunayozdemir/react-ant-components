@@ -9,6 +9,9 @@ function TableV2() {
   const [isModal, setIsModal] = useState(false);
   const [isEditPerson, setIsEditPerson] = useState(null)
   const [loading, setLoading] = useState(true)
+
+
+
   const [dataSource, setDataSource] = useState([
     { key: '0', id: 0, firstName: 'Tunay', lastName: 'Özdemir', not: "50", age: '33' },
     { key: '1', id: 1, firstName: 'Hayriye', lastName: 'Özdemir', not: "92", age: '28' },
@@ -16,6 +19,7 @@ function TableV2() {
     { key: '3', id: 3, firstName: 'Gülay', lastName: 'Özdemir', not: "72", age: '59' },
     { key: '4', id: 4, firstName: 'Duman', lastName: 'Özdemir', not: "45", age: '13' }
   ]);
+
   const columns = [
     { key: '0', title: 'Id', dataIndex: 'id' },
     { key: '1', title: 'First Name', dataIndex: 'firstName' },
