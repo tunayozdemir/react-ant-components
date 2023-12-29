@@ -17,7 +17,10 @@ import TablePageV9_Dynamic from '../../Pages/Tables/TablePageV9_Dynamic'
 import CopyToBoard from '../../Pages/CopyToElements/CopyToBoard'
 import CopyToText from '../../Pages/CopyToElements/CopyToText'
 import CheckboxComponent from '../../Pages/CheckboxComponent/CheckboxComponent'
-
+import DinamicForm from '../../Pages/DinamicForm/DinamicForm'
+import DinamicForm2 from '../../Pages/DinamicForm2/DinamicForm2'
+import DinamicForm3 from '../../Pages/DinamicForm3/DinamicForm3'
+import DinamicForm4 from '../../Pages/DinamicForm4/DinamicForm4'
 
 const path = '';
 
@@ -83,8 +86,6 @@ const routes = [
     path: `${path}/TablePageV9_Dynamic`,
     component:   TablePageV9_Dynamic,
   },
-
-
   {
     path: `${path}/TablePageV8`,
     component: TablePageV8,
@@ -101,7 +102,22 @@ const routes = [
     path: `${path}/CheckboxComponent`,
     component: CheckboxComponent,
   },
-
+  {
+    path: `${path}/DinamicForm`,
+    component: DinamicForm,
+  },
+  {
+    path: `${path}/DinamicForm2`,
+    component: DinamicForm2,
+  },
+  {
+    path: `${path}/DinamicForm3`,
+    component: DinamicForm3,
+  },
+  {
+    path: `${path}/DinamicForm4`,
+    component: DinamicForm4,
+  }
   
 ];
 
