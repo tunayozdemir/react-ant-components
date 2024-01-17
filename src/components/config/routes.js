@@ -21,6 +21,8 @@ import DinamicForm from '../../Pages/DinamicForm/DinamicForm'
 import DinamicForm2 from '../../Pages/DinamicForm2/DinamicForm2'
 import DinamicForm3 from '../../Pages/DinamicForm3/DinamicForm3'
 import DinamicForm4 from '../../Pages/DinamicForm4/DinamicForm4'
+import DinamicForm5 from '../../Pages/DinamicForm5/DinamicForm5'
+import TableAndList from '../../Pages/Tables/TableAndList'
 
 const path = '';
 
@@ -84,7 +86,7 @@ const routes = [
   },
   {
     path: `${path}/TablePageV9_Dynamic`,
-    component:   TablePageV9_Dynamic,
+    component: TablePageV9_Dynamic,
   },
   {
     path: `${path}/TablePageV8`,
@@ -117,8 +119,15 @@ const routes = [
   {
     path: `${path}/DinamicForm4`,
     component: DinamicForm4,
+  },
+  {
+    path: `${path}/DinamicForm5`,
+    component: DinamicForm5,
+  },
+  {
+    path: `${path}/TableAndList`,
+    component: TableAndList,
   }
-  
 ];
 
 export default routes;

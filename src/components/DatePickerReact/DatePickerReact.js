@@ -24,7 +24,6 @@ const DatePickerReact = React.forwardRef((props, ref) => {
       setValue(val)
     }
     else {
-      // debugger
 
       var d1 = new Date(props.minDate);
       var d2 = new Date(val);
@@ -40,7 +39,6 @@ const DatePickerReact = React.forwardRef((props, ref) => {
   }
   const yesterday = new Date()
   const disablePastDt = current => {
-    // debugger
     return current.isAfter(yesterday);
   };
 

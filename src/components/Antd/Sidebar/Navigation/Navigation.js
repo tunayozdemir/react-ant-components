@@ -46,6 +46,7 @@ const Navigation = (props) => {
             <Menu.Item key="20"><Link to="/TablePageV7_Dnd">Table Drag and Drop</Link></Menu.Item>
             <Menu.Item key="21"><Link to="/TablePageV8">Table V8</Link></Menu.Item>
             <Menu.Item key="27"><Link to="/TablePageV9_Dynamic">TablePageV9 Dynamic</Link></Menu.Item>
+            <Menu.Item key="35"><Link to="/TableAndList">Table And List</Link></Menu.Item>
           </SubMenu>
         </SubMenu>
         <SubMenu key="sub4" title="Kopyalama">
@@ -61,6 +62,7 @@ const Navigation = (props) => {
         <Menu.Item key="31" icon={<PhoneOutlined />}><Link to="/DinamicForm2">Dinamic Form2</Link></Menu.Item>
         <Menu.Item key="32" icon={<PhoneOutlined />}><Link to="/DinamicForm3">Dinamic Form3</Link></Menu.Item>
         <Menu.Item key="33" icon={<PhoneOutlined />}><Link to="/DinamicForm4">Dinamic Form4</Link></Menu.Item>
+        <Menu.Item key="34" icon={<PhoneOutlined />}><Link to="/DinamicForm5">Dinamic Form5</Link></Menu.Item>
       </Menu>
     </>
   )

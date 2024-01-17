@@ -4,8 +4,6 @@ import { Table, Input } from 'antd';
 import 'antd/dist/antd.css';
 
 
-
-
 function TableV8() {
   const [name, setName]=useState()
   const data = [
@@ -14,7 +12,7 @@ function TableV8() {
     { key: "3", name: "Joe Black", age: 32, address: "Sidney No. 1 Lake Park" },
     { key: "4", name: "Jim Red", age: 32, address: "London No. 2 Lake Park" }
   ];
-  debugger
+
   const columns = [
     {
       title: "Name",

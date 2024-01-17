@@ -59,7 +59,6 @@ const CheckboxComponent = () => {
     // console.log('id :', id)
     const titles = title;
     const updatedChecklist = checklist.map((item) => {
-      // debugger
 
       return (
         item.options.map((arr) => {

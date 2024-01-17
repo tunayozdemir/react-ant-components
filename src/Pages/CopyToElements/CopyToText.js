@@ -7,7 +7,6 @@ function CopyToText() {
   const [copied, setCopied] = useState(false)
 
   const onInputChange = (e) => {
-    debugger
     setValue(e.target.value)
     setCopied(false)
   }
